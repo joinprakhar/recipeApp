@@ -1,0 +1,25 @@
+import React, { useState } from "react";
+
+function App() {
+    const [txt, setTxt] = useState("");
+    return (
+        <div>
+            <textarea
+                name="swjj"
+                id=""
+                cols="100"
+                rows="3"
+                onChange={(e) => setTxt(e.target.value)}
+            ></textarea>
+            <div>
+                Total letter{txt.split("").length > 1 ? "s" : ""} :
+                {txt.split("").length}
+            </div>
+            <div>Total words : {txt ? txt.split(" ").length : 0}</div>
+            <div>Total sentences : {txt.split(".").length - 1}</div>
+            <div>Reverse: {txt.split("").reverse().join("")}</div>
+        </div>
+    );
+}
+
+export default App;
